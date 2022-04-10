@@ -156,11 +156,18 @@ void erase(Addressbook* a, int index)
 {
 	Iterator pos;
 	pos = a->begin();
-	for (int i = 0; i < index; i++)
+	if (index < a->size())
 	{
-		pos.next();
+		for (int i = 1; i < index; i++)
+		{
+			pos.next();
+		}
+		pos = a->erase(pos);
 	}
-	pos = a->erase(pos);
+	else
+	{
+		std::cout << "That entry doesn't exist." << std::endl;
+	}
 }
 
 void save(Addressbook* a)
