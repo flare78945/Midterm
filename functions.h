@@ -4,9 +4,12 @@
 #include <iostream>
 #include <string>
 
+#include "addressbook.h"
+#include "iterator.h"
+
 /*
 	This function collects binary user input (Yes or No) 
-	in the form of a string
+	in the form of a int
 */
 std::string query();
 
