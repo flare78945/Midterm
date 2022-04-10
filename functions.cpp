@@ -8,8 +8,8 @@ std::string query()
 	std::cout << "1 = Yes" << std::endl;
 	std::cout << "2 = No" << std::endl;
 	std::string hold;
-	std::cin >> hold;
-	std::cin.ignore(1);
+	clear();
+	std::getline(std::cin, hold, '\n');
 	return hold;
 }
 
@@ -156,7 +156,7 @@ void erase(Addressbook* a, int index)
 {
 	Iterator pos;
 	pos = a->begin();
-	if (index < a->size())
+	if (index <= a->size())
 	{
 		for (int i = 1; i < index; i++)
 		{
