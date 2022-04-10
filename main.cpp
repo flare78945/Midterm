@@ -34,7 +34,7 @@ int main()
 			pos.add(get_name(), get_address());
 			std::cout << "Will you add another entry? " << std::endl;
 			std::string temp = query();
-			while (temp != "1" && temp != "2")
+			do
 			{
 				if (temp == "2")
 				{
@@ -44,7 +44,7 @@ int main()
 				{
 					temp = query();
 				}
-			}
+			} while (temp != "1" && temp != "2");
 		}
 	}
 
@@ -58,6 +58,8 @@ int main()
 	}
 
 	menu(One);
+	
+	//One->print();
 	
 	One->free();
 	
