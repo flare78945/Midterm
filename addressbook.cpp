@@ -157,9 +157,19 @@ Iterator Addressbook::erase(Iterator pos)
 	}
 	else
 	{
-		temp.entry = pos.entry->Next;
-		temp.entry->Previous = nullptr;
-		temp.book->First = temp.entry;
+		if (temp.entry->Next != nullptr)
+		{
+			temp.entry = pos.entry->Next;
+			temp.entry->Previous = nullptr;
+			temp.book->First = temp.entry;
+		}
+		else
+		{
+			temp.entry = nullptr;
+			temp.book->First = nullptr;
+			temp.book->Last = nullptr;
+			std::cout << "You erased the last entry." << std::endl;
+		}
 	}
 	
 	delete to_delete;
